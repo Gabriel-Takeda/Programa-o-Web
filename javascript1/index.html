@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 1</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabela de Multiplicação</h1>
+    <div id="multiplication-tables"></div>
+    <script>
+        function imprimir_multiplicacao() {
+            const tableContainer = document.getElementById('multiplication-tables');
+            let tables = '';
+            
+            for (let i = 1; i <= 9; i++) {
+                let table = '<table>';
+                table += `<tr><th>Multiplicação por ${i}</th></tr>`;
+                
+                for (let j = 1; j <= 9; j++) {
+                    table += '<tr>';
+                    table += `<td>${i} x ${j} = ${i * j}</td>`;
+                    table += '</tr>';
+                }
+                
+                table += '</table>';
+                tables += table;
+            }
+            
+            tableContainer.innerHTML = tables;
+        }
+
+        imprimir_multiplicacao();
+    </script>
+    
+</body>
+</html>
