@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            padding: 1rem ;
+        }
+
+        #div1, #div2, #div3, #div4, #div5 {
+            background-color: red;
+            width: 7rem;
+            height: 1rem;
+        }
+
+        #resposta {
+            width: 50%;
+            display: flex;
+            gap: 2rem;
+            height: 30rem;
+            align-items: flex-end;
+
+        }
+
+        input {
+            margin-left: 1rem;
+        }
+
+        input {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form>
+            <label for="barra1">informe a altura das barras NAO ESQUECA DA UNIDADE DE MEDIDA</label>
+            <input id="barra1" placeholder="informe o valor"/>
+            <input id="barra2" placeholder="informe o valor"/>
+            <input id="barra3" placeholder="informe o valor"/>
+            <input id="barra4" placeholder="informe o valor"/>
+            <input id="barra5" placeholder="informe o valor"/>
+            <br/>
+            <label for="grosso">informe a grossura da barra</label>
+            <input id="grosso" placeholder="informe o valor"/>
+            <br/>
+            <button id="botao">
+                criar as barras
+            </button>
+        </form>
+    </div>
+
+
+    <div id="resposta">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+        <div id="div5"></div>
+    </div>
+</body>
+    <script src='./index.js'></script>
+</html>
