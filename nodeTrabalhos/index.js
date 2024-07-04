@@ -1,5 +1,8 @@
 const http = require('http');
 const fs = require("fs");
+require('dotenv').config();
+
+const PORT = process.env.PORT ?? 8080
 
 let valores = [];
 
@@ -15,19 +18,19 @@ fs.readdir(valores[0], (err, arquivos) => {
     if (err) throw err;
     
     arquivos.forEach((arquivo) => {
-        arquivos_nomes += arquivo + '\n'; // Concatena cada nome de arquivo com uma quebra de linha
+        arquivos_nomes += arquivo + '\n'; 
         console.log(arquivo);
     });
 
-    // Após preencher arquivos_nomes, podemos iniciar o servidor HTTP aqui dentro do callback
+    
     const server = http.createServer((req, res) => {
         res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
-        res.write(arquivos_nomes); // Escreve os nomes dos arquivos na resposta HTTP
+        res.write(arquivos_nomes); 
         res.end();
     });
 
-    server.listen(3333)
+    server.listen(PORT)
+    console.log('i love minecraft')
 });
 
-// Este console.log será executado antes de arquivos_nomes ser preenchido completamente
 console.log(arquivos_nomes);
