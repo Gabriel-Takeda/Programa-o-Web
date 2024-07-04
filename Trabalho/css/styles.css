@@ -1,0 +1,9 @@
+#board {
+    background-color: #ccc;
+    border: 2px solid black;
+  }
+  
+  #board td {
+    width: 16px;
+    height: 16px;
+  }
