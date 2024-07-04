@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon index.js",
-    "start:prod": "node index.js"
+    "start": "set NODE_ENV=development&& npx nodemon index.js",
+    "start:prod": "set NODE_ENV=production&& node index.js"
   },
   "keywords": [],
   "author": "",
