@@ -1,6 +1,14 @@
 import { Request, Response } from 'express';
 import { LoremIpsum } from "lorem-ipsum";
 
+const testCookie = (req:Request, res: Response) => {
+    if( req.cookies &&  !("test" in req.cookies)) {
+        res.cookie("test", '1')
+        res.send("você ainda não tinha o cookie. Criando...")
+    } else {
+        res.send("você ja tinha o cookie.")
+    }
+}
 
 const hb1 = (req: Request ,res: Response)=> {
     res.render("main/hb1", { message:"Alguma mensagem" })
@@ -61,4 +69,4 @@ const lorem = (req: Request,res: Response) => {
     res.send(new LoremIpsum().generateParagraphs(Number(3)));
 }
 
-export default { hb1, hb2, hb3, hb4, hb5, bemvindo, sobrenos, lorem}
+export default { hb1, hb2, hb3, hb4, hb5, bemvindo, sobrenos, lorem, testCookie}

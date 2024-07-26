@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Curso</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h3>Cadastro de novo usuário</h3>
+
+        <div class="col-6">
+            <form action="/auth/signup" id="signup" method="post">
+                <div class="form-group">
+                    <label for="fullname">Nome Completo</label>
+                    <input type="text" class="form-control" id="name" placeholder="Insira o nome do curso" name="fullname">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">email</label>
+                    <input type="text" class="form-control" id="code" placeholder="Insira a sigla do curso" name="email">
+                </div>
+
+                 <div class="form-group">
+                    <label for="password">Curso</label>
+                    <select name="majorId" class="form-select" aria-label="Default select example">
+                        <option selected placeholder="Selecione o curso"></option>
+                        {{#each majors}}
+                            <option value="{{id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input class="form-control" type="password" id="password" name="password" placeholder="Insira a senha"></input>
+                </div>
+
+                <div class="form-group">
+                    <label for="repeat-password">Repita a senha</label>
+                    <input class="form-control" type="password" id="repeat-password" placeholder="Insira a senha"></input>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+</body>
+    <script>
+        const signup = document.getElementById("signup");
+        signup.addEventListener("submit", (e) => {
+            const password = document.getElementById("password").value
+            const repeatPassword = document.getElementById("repeat-password").value
+            if (!password || password != repeatPassword) e.preventDefault();
+        })
+    </script>
+</html>

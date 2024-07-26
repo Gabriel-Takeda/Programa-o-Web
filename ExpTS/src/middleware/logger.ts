@@ -4,7 +4,6 @@ import path from "path";
 
 const logDirectory = process.env.LOG_DIRECTORY || 'logs';
 
-// Create the log directory if it does not exist
 if (!fs.existsSync(logDirectory)) {
     fs.mkdirSync(logDirectory);
 }
